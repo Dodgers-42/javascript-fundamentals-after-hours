@@ -256,3 +256,38 @@ const characters = [
 ]
 
 module.exports = characters;
+
+function wrap() {
+    let counter = 0;
+    return function () {
+        return ++counter;
+    }
+}
+
+const increment = wrap();
+
+console.log(increment());
+console.log(increment());
+console.log(increment());
+console.log(increment());
+
+function inning() {
+    return Math.floor(Math.random() * 3);
+}
+
+let cb = inning();
+
+console.log(cb);
+console.log(cb);
+console.log(cb);
+console.log(cb);
+
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    greeting() {
+        return `Hello, my name is ${this.name}. I am ${this.age} years old.`
+    }
+}
